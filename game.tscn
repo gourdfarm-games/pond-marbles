@@ -79,6 +79,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0797895, 0.740836, 8.20086
 [node name="Pollywog" parent="." instance=ExtResource("4_grruw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154437, -0.790764, 8.20086)
 
-[node name="Game" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.818421, 0.57462, 0, -0.57462, 0.818421, 0, 6.34642, 12.0978)
+[node name="Cam3" type="Camera3D" parent="."]
+transform = Transform3D(0.716935, 0.40059, -0.570554, 0, 0.818421, 0.57462, 0.69714, -0.411965, 0.586754, -6.80685, 3.78901, 6.73112)
 doppler_tracking = 1
