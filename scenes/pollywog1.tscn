@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/Pollywog.gd" id="1_i2g01"]
 [ext_resource type="Texture2D" uid="uid://bbrnyhvq701cr" path="res://prototyping/kenney_prototype_textures/red/texture_08.png" id="2_xbnu3"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="3_5o2ei"]
-[ext_resource type="Script" path="res://scenes/cam_2.gd" id="4_63m28"]
+[ext_resource type="Script" path="res://scripts/FollowCam.gd" id="4_451im"]
 [ext_resource type="Material" uid="uid://c1bcg1b80oiig" path="res://scenes/arrow.tres" id="4_b6ntp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p4kc3"]
@@ -47,13 +47,13 @@ shape = SubResource("SphereShape3D_vfbwq")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.00633566, 0.99998, 0, -0.99998, 0.00633566, 0, 12.0997, 0)
 v_offset = 8.0
+current = true
 script = ExtResource("3_5o2ei")
 
 [node name="Cam2" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.795759, 0.605613, 0, -0.605613, 0.795759, 0, 3.06701, 2.50179)
 v_offset = -2.06
-current = true
-script = ExtResource("4_63m28")
+script = ExtResource("4_451im")
 
 [node name="Scaler" type="Marker3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.01, 0, 0, 0)
