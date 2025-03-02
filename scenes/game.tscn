@@ -74,7 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.47385, -0.907053, -3.9777)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58778, -0.907053, -0.582527)
 
 [node name="Pollywog2" parent="." instance=ExtResource("3_4fdlh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0797895, 0.740836, 8.20086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0797895, -0.837126, -8.01164)
 
 [node name="Pollywog" parent="." instance=ExtResource("4_0h0xf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154437, -0.790764, 8.20086)
