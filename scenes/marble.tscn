@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://d11adruwwqqev"]
 
-[ext_resource type="Texture2D" uid="uid://c8cm1jk1rmds4" path="res://prototyping/kenney_prototype_textures/orange/texture_09.png" id="1_01d2f"]
+[ext_resource type="Texture2D" uid="uid://d1wd5lamgr4vw" path="res://prototyping/kenney_prototype_textures/green/yellow.png" id="1_frg4m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o63kd"]
 friction = 0.2
 rough = true
 bounce = 0.35
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgw2y"]
-albedo_texture = ExtResource("1_01d2f")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spoho"]
+albedo_texture = ExtResource("1_frg4m")
 
 [sub_resource type="SphereMesh" id="SphereMesh_yg5f4"]
 
@@ -22,7 +22,7 @@ physics_material_override = SubResource("PhysicsMaterial_o63kd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_sgw2y")
+material_override = SubResource("StandardMaterial3D_spoho")
 mesh = SubResource("SphereMesh_yg5f4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]

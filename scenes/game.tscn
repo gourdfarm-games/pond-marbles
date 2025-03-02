@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://chjire6w7xq3o"]
+[gd_scene load_steps=11 format=3 uid="uid://chjire6w7xq3o"]
 
 [ext_resource type="PackedScene" uid="uid://cgcv2cybxk4or" path="res://scenes/level_0.tscn" id="1_ks1dp"]
 [ext_resource type="PackedScene" uid="uid://d11adruwwqqev" path="res://scenes/marble.tscn" id="2_ryn7b"]
 [ext_resource type="PackedScene" uid="uid://bs6brr8jf00sc" path="res://scenes/pollywog2.tscn" id="3_4fdlh"]
 [ext_resource type="PackedScene" uid="uid://cfg4r6lnrfmyv" path="res://scenes/pollywog1.tscn" id="4_0h0xf"]
+[ext_resource type="PackedScene" uid="uid://bd0n8uvaootu" path="res://scenes/pollywog3.tscn" id="5_6icck"]
+[ext_resource type="PackedScene" uid="uid://cfqxp62whhfed" path="res://scenes/pollywog4.tscn" id="6_gv4ou"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x3fjl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -21,6 +23,11 @@ ssao_radius = 0.21
 ssao_intensity = 1.53
 ssao_power = 3.44609
 glow_enabled = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p4kc3"]
+friction = 0.6
+rough = true
+bounce = 0.35
 
 [node name="Circle" type="Node"]
 
@@ -73,12 +80,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.47385, -0.907053, -3.9777)
 [node name="Node3D6" parent="Marbles" instance=ExtResource("2_ryn7b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58778, -0.907053, -0.582527)
 
-[node name="Pollywog2" parent="." instance=ExtResource("3_4fdlh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0797895, -0.837126, -8.01164)
-
 [node name="Pollywog" parent="." instance=ExtResource("4_0h0xf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154437, -0.790764, 8.20086)
 
 [node name="Cam3" type="Camera3D" parent="."]
 transform = Transform3D(0.716935, 0.40059, -0.570554, 0, 0.818421, 0.57462, 0.69714, -0.411965, 0.586754, -6.80685, 3.78901, 6.73112)
 doppler_tracking = 1
+
+[node name="Pollywog2" parent="." instance=ExtResource("3_4fdlh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.846092, -8.33443)
+physics_material_override = SubResource("PhysicsMaterial_p4kc3")
+
+[node name="Pollywog3" parent="." instance=ExtResource("5_6icck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.31669, -0.72438, 0)
+physics_material_override = SubResource("PhysicsMaterial_p4kc3")
+
+[node name="Pollywog4" parent="." instance=ExtResource("6_gv4ou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14079, -0.739622, 0)

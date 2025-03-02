@@ -1,13 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bs6brr8jf00sc"]
+[gd_scene load_steps=11 format=3 uid="uid://bd0n8uvaootu"]
 
-[ext_resource type="Script" path="res://scripts/Pollywog.gd" id="1_qfaex"]
-[ext_resource type="PhysicsMaterial" uid="uid://mpr8ah7emhpf" path="res://physics/pollywog.tres" id="1_warn5"]
-[ext_resource type="Texture2D" uid="uid://ict6kjij12wn" path="res://prototyping/kenney_prototype_textures/purple/texture_08.png" id="2_so2ed"]
-[ext_resource type="Script" path="res://scripts/Camera.gd" id="3_tso8s"]
-[ext_resource type="Material" uid="uid://c1bcg1b80oiig" path="res://materials/arrow.tres" id="4_6w4mv"]
+[ext_resource type="PhysicsMaterial" uid="uid://mpr8ah7emhpf" path="res://physics/pollywog.tres" id="1_higsc"]
+[ext_resource type="Script" path="res://scripts/Pollywog.gd" id="1_vi6u5"]
+[ext_resource type="Script" path="res://scripts/Camera.gd" id="2_piavb"]
+[ext_resource type="Texture2D" uid="uid://cnv8pws74d5vf" path="res://prototyping/kenney_prototype_textures/green/texture_08.png" id="3_agbbd"]
+[ext_resource type="Material" uid="uid://c1bcg1b80oiig" path="res://materials/arrow.tres" id="4_m74qp"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grko1"]
-albedo_texture = ExtResource("2_so2ed")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0esbd"]
+albedo_texture = ExtResource("3_agbbd")
 
 [sub_resource type="SphereMesh" id="SphereMesh_4tc7r"]
 radius = 0.102
@@ -26,18 +26,18 @@ size = 3.5
 curve = SubResource("Curve_5h4up")
 
 [node name="Pollywog" type="RigidBody3D"]
-physics_material_override = ExtResource("1_warn5")
+physics_material_override = ExtResource("1_higsc")
 linear_damp = 0.5
-script = ExtResource("1_qfaex")
+script = ExtResource("1_vi6u5")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 11.2238, 0)
-v_offset = -8.0
-script = ExtResource("3_tso8s")
+h_offset = 8.0
+script = ExtResource("2_piavb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_grko1")
+material_override = SubResource("StandardMaterial3D_0esbd")
 mesh = SubResource("SphereMesh_4tc7r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -50,6 +50,6 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.01, 0, 0, 0)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Scaler"]
 transform = Transform3D(1, -4.23516e-22, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.5)
 mesh = SubResource("RibbonTrailMesh_sisus")
-surface_material_override/0 = ExtResource("4_6w4mv")
+surface_material_override/0 = ExtResource("4_m74qp")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

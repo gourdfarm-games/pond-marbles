@@ -1,15 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://cfg4r6lnrfmyv"]
 
 [ext_resource type="Script" path="res://scripts/Pollywog.gd" id="1_i2g01"]
+[ext_resource type="PhysicsMaterial" uid="uid://mpr8ah7emhpf" path="res://physics/pollywog.tres" id="1_oxame"]
 [ext_resource type="Texture2D" uid="uid://bbrnyhvq701cr" path="res://prototyping/kenney_prototype_textures/red/texture_08.png" id="2_xbnu3"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="3_5o2ei"]
 [ext_resource type="Script" path="res://scripts/FollowCam.gd" id="4_451im"]
-[ext_resource type="Material" uid="uid://c1bcg1b80oiig" path="res://scenes/arrow.tres" id="4_b6ntp"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p4kc3"]
-friction = 0.4
-rough = true
-bounce = 0.35
+[ext_resource type="Material" uid="uid://c1bcg1b80oiig" path="res://materials/arrow.tres" id="4_b6ntp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owc6i"]
 albedo_texture = ExtResource("2_xbnu3")
@@ -31,17 +27,17 @@ size = 3.5
 curve = SubResource("Curve_5h4up")
 
 [node name="Pollywog" type="RigidBody3D"]
-physics_material_override = SubResource("PhysicsMaterial_p4kc3")
+physics_material_override = ExtResource("1_oxame")
 linear_damp = 0.5
 script = ExtResource("1_i2g01")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_owc6i")
 mesh = SubResource("SphereMesh_4tc7r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 shape = SubResource("SphereShape3D_vfbwq")
 
 [node name="Camera3D" type="Camera3D" parent="."]
