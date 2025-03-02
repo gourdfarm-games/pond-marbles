@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3o3wk1lx0rc3"]
+
+[ext_resource type="Texture2D" uid="uid://dmpx6f4jmwkas" path="res://prototyping/kenney_prototype_textures/dark/texture_08.png" id="1_ex8n1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jgcf"]
+albedo_texture = ExtResource("1_ex8n1")
+
+[sub_resource type="SphereMesh" id="SphereMesh_6rrwm"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.396473, 0, 0, 0, 0.364392, 0, 0, 0, 0.428571, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_7jgcf")
+mesh = SubResource("SphereMesh_6rrwm")
