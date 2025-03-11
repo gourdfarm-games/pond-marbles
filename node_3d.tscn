@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bv0v48tut2qce"]
+
+[ext_resource type="Texture2D" uid="uid://j6o8qewlvhl8" path="res://prototyping/kenney_prototype_textures/dark/brown.png" id="1_a202f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a202f"]
+albedo_texture = ExtResource("1_a202f")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_noarx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_a0tk4"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+material_override = SubResource("StandardMaterial3D_a202f")
+mesh = SubResource("CylinderMesh_noarx")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_a0tk4")

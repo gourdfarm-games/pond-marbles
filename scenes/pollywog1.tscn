@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://cfg4r6lnrfmyv"]
 
-[ext_resource type="Script" path="res://scripts/Pollywog.gd" id="1_i2g01"]
+[ext_resource type="Script" uid="uid://bir1gk45okq4i" path="res://scripts/Pollywog.gd" id="1_i2g01"]
 [ext_resource type="PhysicsMaterial" uid="uid://mpr8ah7emhpf" path="res://physics/pollywog.tres" id="1_oxame"]
 [ext_resource type="Texture2D" uid="uid://bbrnyhvq701cr" path="res://prototyping/kenney_prototype_textures/red/texture_08.png" id="2_xbnu3"]
-[ext_resource type="Script" path="res://scripts/Camera.gd" id="3_5o2ei"]
-[ext_resource type="Script" path="res://scripts/FollowCam.gd" id="4_451im"]
+[ext_resource type="Script" uid="uid://bsj0epobgkhpt" path="res://scripts/Camera.gd" id="3_5o2ei"]
+[ext_resource type="Script" uid="uid://bbt8o33py6nql" path="res://scripts/FollowCam.gd" id="4_451im"]
 [ext_resource type="Material" uid="uid://c1bcg1b80oiig" path="res://materials/arrow.tres" id="4_b6ntp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owc6i"]
@@ -32,18 +32,18 @@ linear_damp = 0.5
 script = ExtResource("1_i2g01")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_owc6i")
 mesh = SubResource("SphereMesh_4tc7r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 shape = SubResource("SphereShape3D_vfbwq")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.00633566, 0.99998, 0, -0.99998, 0.00633566, 0, 12.0997, 0)
-v_offset = 8.0
-current = true
+transform = Transform3D(1, 0, 0, 0, 0.00633566, 0.99998, 0, -0.99998, 0.00633566, 0, 16.294, 0)
+h_offset = 20.0
+v_offset = -6.0
 script = ExtResource("3_5o2ei")
 
 [node name="Cam2" type="Camera3D" parent="."]

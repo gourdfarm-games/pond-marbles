@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dotx5jw4fndg0"]
 
-[ext_resource type="Script" path="res://scripts/Pollywog.gd" id="1_awxsr"]
-[ext_resource type="Script" path="res://scripts/Camera.gd" id="2_7jhv4"]
+[ext_resource type="Script" uid="uid://bir1gk45okq4i" path="res://scripts/Pollywog.gd" id="1_awxsr"]
+[ext_resource type="Script" uid="uid://bsj0epobgkhpt" path="res://scripts/Camera.gd" id="2_7jhv4"]
 [ext_resource type="Texture2D" uid="uid://cnv8pws74d5vf" path="res://prototyping/kenney_prototype_textures/green/texture_08.png" id="2_h2vv4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p4kc3"]

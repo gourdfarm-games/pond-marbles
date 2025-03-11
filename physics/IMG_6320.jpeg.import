@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bptu0lk8tkk4g"
-path="res://.godot/imported/texture_04.png-8d49416e37ec4d26d36b7d5a06725840.ctex"
+uid="uid://cdk3nyg4bajno"
+path="res://.godot/imported/IMG_6320.jpeg-db8379e8081efde6425a966603d16788.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://prototyping/kenney_prototype_textures/green/texture_04.png"
-dest_files=["res://.godot/imported/texture_04.png-8d49416e37ec4d26d36b7d5a06725840.ctex"]
+source_file="res://physics/IMG_6320.jpeg"
+dest_files=["res://.godot/imported/IMG_6320.jpeg-db8379e8081efde6425a966603d16788.ctex"]
 
 [params]
 

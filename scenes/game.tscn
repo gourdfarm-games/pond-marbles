@@ -1,11 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://chjire6w7xq3o"]
+[gd_scene load_steps=14 format=3 uid="uid://chjire6w7xq3o"]
 
-[ext_resource type="PackedScene" uid="uid://cgcv2cybxk4or" path="res://scenes/level_0.tscn" id="1_ks1dp"]
 [ext_resource type="PackedScene" uid="uid://d11adruwwqqev" path="res://scenes/marble.tscn" id="2_ryn7b"]
-[ext_resource type="PackedScene" uid="uid://bs6brr8jf00sc" path="res://scenes/pollywog2.tscn" id="3_4fdlh"]
+[ext_resource type="PackedScene" uid="uid://g7wy1tfcd5uk" path="res://scenes/maincam.tscn" id="3_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://cfg4r6lnrfmyv" path="res://scenes/pollywog1.tscn" id="4_0h0xf"]
-[ext_resource type="PackedScene" uid="uid://bd0n8uvaootu" path="res://scenes/pollywog3.tscn" id="5_6icck"]
-[ext_resource type="PackedScene" uid="uid://cfqxp62whhfed" path="res://scenes/pollywog4.tscn" id="6_gv4ou"]
+[ext_resource type="PackedScene" uid="uid://cgucaweo3j3md" path="res://lilypad.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://gfajni2rapwr" path="res://branch.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://bs6brr8jf00sc" path="res://scenes/pollywog2.tscn" id="6_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://bd0n8uvaootu" path="res://scenes/pollywog3.tscn" id="7_gee14"]
+[ext_resource type="PackedScene" uid="uid://dagym8bvt3r0r" path="res://scenes/level_1.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://cfqxp62whhfed" path="res://scenes/pollywog4.tscn" id="8_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://dsd5eceswjs8n" path="res://scenes/hud.tscn" id="10_vtaks"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x3fjl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -24,76 +28,114 @@ ssao_intensity = 1.53
 ssao_power = 3.44609
 glow_enabled = true
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p4kc3"]
-friction = 0.6
-rough = true
-bounce = 0.35
-
 [node name="Circle" type="Node"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="LCA" type="Node" parent="."]
+
+[node name="Cam3" type="Camera3D" parent="LCA"]
+transform = Transform3D(0.716935, 0.40059, -0.570554, 0, 0.818421, 0.574619, 0.69714, -0.411965, 0.586755, -6.80685, 4.96727, 6.73112)
+doppler_tracking = 1
+
+[node name="Maincam" parent="LCA" instance=ExtResource("3_u5sy4")]
+transform = Transform3D(1, -0.000156173, 5.35184e-05, 0.000156173, 1, 5.66353e-05, -5.35184e-05, -5.66353e-05, 1, 0.0430327, 16.6918, -0.0138884)
+visible = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="LCA"]
 environment = SubResource("Environment_470j2")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="LCA"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 1.17826, 0)
 shadow_enabled = true
 shadow_bias = 0.02
-
-[node name="Level_0" parent="." instance=ExtResource("1_ks1dp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.732521, 0)
 
 [node name="Marbles" type="Node" parent="."]
 
 [node name="Node3D" parent="Marbles" instance=ExtResource("2_ryn7b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.907053, -2.24829)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.84047, 0.271211, -4.8194)
 
 [node name="Node3D7" parent="Marbles" instance=ExtResource("2_ryn7b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.907053, 2.65999)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.53914, 0.271211, -3.3948)
 
 [node name="Node3D8" parent="Marbles" instance=ExtResource("2_ryn7b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91131, -0.907053, 1.47573)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44514, 0.271211, -0.155382)
 
 [node name="Node3D9" parent="Marbles" instance=ExtResource("2_ryn7b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.63836, -0.907053, 1.47573)
+transform = Transform3D(0.999543, 0, -0.0302419, 0, 1, 0, 0.0302419, 0, 0.999543, 5.52637, 0.271211, 3.77809)
 
 [node name="Node3D10" parent="Marbles" instance=ExtResource("2_ryn7b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4032, -0.907053, -2.20042)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.64885, 0.271211, -1.18109)
 
 [node name="Node3D11" parent="Marbles" instance=ExtResource("2_ryn7b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.03312, -0.907053, -2.20042)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8468, 0.271211, 1.81768)
 
 [node name="Node3D12" parent="Marbles" instance=ExtResource("2_ryn7b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91132, -0.907053, 4.04163)
+transform = Transform3D(0.998037, 0, -0.0626338, 0, 1, 0, 0.0626338, 0, 0.998037, -4.69991, 0.271211, 1.95344)
 
 [node name="Node3D2" parent="Marbles" instance=ExtResource("2_ryn7b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.04015, -0.907053, -1.40096)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9909, 0.271211, -3.78427)
 
 [node name="Node3D3" parent="Marbles" instance=ExtResource("2_ryn7b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.04015, -0.907053, -3.9777)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.95138, 0.271211, -4.65349)
 
 [node name="Node3D4" parent="Marbles" instance=ExtResource("2_ryn7b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.609097, -0.907053, -3.9777)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4692, 0.271211, -2.30903)
 
 [node name="Node3D5" parent="Marbles" instance=ExtResource("2_ryn7b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.47385, -0.907053, -3.9777)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9359, 0.271211, 1.19398)
 
 [node name="Node3D6" parent="Marbles" instance=ExtResource("2_ryn7b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58778, -0.907053, -0.582527)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6494, 0.271211, -0.297516)
 
-[node name="Pollywog" parent="." instance=ExtResource("4_0h0xf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154437, -0.790764, 8.20086)
+[node name="Environment" type="Node" parent="."]
 
-[node name="Cam3" type="Camera3D" parent="."]
-transform = Transform3D(0.716935, 0.40059, -0.570554, 0, 0.818421, 0.57462, 0.69714, -0.411965, 0.586754, -6.80685, 3.78901, 6.73112)
-doppler_tracking = 1
+[node name="Node3D4" parent="Environment" instance=ExtResource("6_p57ef")]
+transform = Transform3D(-4.37114e-08, -3.77434, 0, 1, -1.64981e-07, 0, 0, 0, 1, 15.4846, 0, 6.81135)
 
-[node name="Pollywog2" parent="." instance=ExtResource("3_4fdlh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.846092, -8.33443)
-physics_material_override = SubResource("PhysicsMaterial_p4kc3")
+[node name="Node3D6" parent="Environment" instance=ExtResource("6_p57ef")]
+transform = Transform3D(-4.37114e-08, -3.81024, 0, 1, -1.66551e-07, 0, 0, 0, 1, 15.6353, 0, -7.00624)
 
-[node name="Pollywog3" parent="." instance=ExtResource("5_6icck")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.31669, -0.72438, 0)
-physics_material_override = SubResource("PhysicsMaterial_p4kc3")
+[node name="Node3D7" parent="Environment" instance=ExtResource("6_p57ef")]
+transform = Transform3D(5.4634e-15, 6.27649e-08, 1.17169, 1, -6.27649e-08, 0, 4.37114e-08, 1.43589, -5.12162e-08, -18.6818, 0, -5.94749)
 
-[node name="Pollywog4" parent="." instance=ExtResource("6_gv4ou")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14079, -0.739622, 0)
+[node name="Node3D8" parent="Environment" instance=ExtResource("6_p57ef")]
+transform = Transform3D(5.4634e-15, 6.27649e-08, 1.17169, 1, -6.27649e-08, 0, 4.37114e-08, 1.43589, -5.12162e-08, 18.7453, 0, -5.94749)
+
+[node name="ground" parent="Environment" instance=ExtResource("7_u5sy4")]
+transform = Transform3D(1.17169, 0, 0, 0, 1, 0, 0, 0, 1, 0.0501962, -0.609356, 0)
+
+[node name="Lilypad" type="Node" parent="."]
+
+[node name="Lilypad" parent="Lilypad" instance=ExtResource("5_iywne")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -12.7432, -0.367673, -0.968626)
+
+[node name="Lilypad2" parent="Lilypad" instance=ExtResource("5_iywne")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 4.13665, -0.367673, 1.46204)
+
+[node name="Lilypad3" parent="Lilypad" instance=ExtResource("5_iywne")]
+transform = Transform3D(0.81023, 0, 0, 0, 0.81023, 0, 0, 0, 0.81023, -4.0903, -0.367673, -3.00147)
+
+[node name="Lilypad6" parent="Lilypad" instance=ExtResource("5_iywne")]
+transform = Transform3D(0.81023, 0, 0, 0, 0.81023, 0, 0, 0, 0.81023, 13.8309, -0.367673, 0.803742)
+
+[node name="Lilypad5" parent="Lilypad" instance=ExtResource("5_iywne")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -5.34528, -0.360767, 3.06755)
+
+[node name="Lilypad4" parent="Lilypad" instance=ExtResource("5_iywne")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 9.50408, -0.367673, -3.95775)
+
+[node name="Pollywog" parent="." instance=ExtResource("6_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1312, 0.476458, 5.51245)
+
+[node name="Pollywog3" parent="." instance=ExtResource("7_gee14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1187, 0.456764, 5.53705)
+
+[node name="Pollywog4" parent="." instance=ExtResource("8_0tnpc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1246, 0.476458, -5.78208)
+
+[node name="Pollywog2" parent="." instance=ExtResource("4_0h0xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1664, 0.476458, -5.78024)
+
+[node name="Control" parent="." instance=ExtResource("10_vtaks")]
+layout_direction = 1
+offset_right = -1823.0
+offset_bottom = -994.0
